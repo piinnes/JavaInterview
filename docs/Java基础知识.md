@@ -1,0 +1,193 @@
+## 面向对象与面向过程
+
+面向对象和面向过程是两种软件开发方法，或者说是两种不同的开发范式。
+
+### 什么是面向过程？
+
+“面向过程”(Procedure Oriented)是一种以过程为中心的编程思想，是一种自顶而下的编程模式。
+
+最典型的面向过程的编程语言就是C语言。
+
+#### 概述
+
+把问题分解成一个一个步骤，每个步骤用函数实现，依次调用即可。
+
+就是说，在进行面向过程编程的时候，不需要考虑那么多，上来先定义一个函数，然后使用各种诸如if-else、for-each等方式进行代码执行。
+
+最典型的用法就是实现一个简单的算法，比如实现冒泡排序。
+
+### 什么是面向对象？
+
+面向对象程序设计的雏形，早在出现在1960年的Simula语言中，当时的程序设计领域正面临着一种危机：在软硬件环境逐渐复杂的情
+
+况，软件如何得到良好的维护？
+
+面向对象程序设计在某种程度上通过强调可重复性解决了这一问题。
+
+目前较为流行的面向对象语言主要有Java、C#、C++、Python、Ruby、PHP等
+
+面向对象是一种将事务高度抽象化的编程模式
+
+#### 概叔
+
+将问题分解成一个一个步骤，对每个步骤进行相应的抽象，形成对象，通过不同对象之间的调用，组合解决问题。
+
+就是说，在进行面向对象进行编程的时候，要把属性、行为等封装成对象，然后基于这些对象及对象的能力进行业务逻辑的实现。
+
+比如:想要造一辆车，上来要先把车的各种属性定义出来，然后抽象成一个Car类。
+
+#### 面向对象的三个基本特征
+
+面向对象的三个基本特征是：封装、继承、多态。
+
+##### 封装
+
+将对象的状态信息尽可能的隐藏在对象内部，只保留有限的接口和方法与外界进行交互，从而避免了外界对对象内部属性的破坏。
+
+Java中使用访问控制符来保护对类、变量、方法和构造方法的访问。
+
+###### 封装举例
+
+```java
+/**
+ * 矩形
+ */
+class Rectangle {
+
+    /**
+     * 设置矩形的长度和宽度
+     */
+    public Rectangle(int length, int width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    /**
+     * 长度
+     */
+    private int length;
+
+    /**
+     * 宽度
+     */
+    private int width;
+
+    /**
+     * 获得矩形面积
+     */
+    public int area() {
+        return this.length * this.width;
+    }
+
+    /**
+     * 父类方法
+     */
+    public void test() {
+        System.out.println("我是属于Rectangle的方法");
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+
+}
+```
+
+
+
+###### Java支持4种不同的访问权限　
+
+默认的，也称为default，在同一包内可见，不使用任何修饰符。
+私有的，以private修饰符指定，在同一类内可见。
+共有的，以public修饰符指定，对所有类可见。
+受保护的，以protected修饰符指定，对同一包内的类和所有子类可见。
+
+![类型访问权限](https://img-blog.csdnimg.cn/20190122202121761.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDI5MzY5,size_16,color_FFFFFF,t_70)
+
+##### 继承
+
+Java通过继承创建分等级层次的类，可以理解为一个对象从另一个对象获取属性的过程。
+
+通过继承创建的新类称为“子类”或“派生类”，被继承的类称为“基类”、“父类”或“超类”。继承的过程，就是从一般到特殊的过程。
+
+继承中最常使用的两个关键字是extends（用于基本类和抽象类）和implements（用于接口）。
+
+###### 继承举例
+
+```java
+package com.mju;
+
+/**
+ * 正方形，继承自矩形
+ */
+class Square extends Rectangle {
+
+    /**
+     * 设置正方形边长
+     *
+     * @param length
+     */
+    public Square(int length) {
+        super(length, length);
+    }
+
+    /**
+     * 子类重写父类的方法
+     */
+    @Override
+    public void test() {
+        System.out.println("我是属于Square的方法");
+    }
+}
+```
+
+###### 注意事项
+
+- 类的继承是单一继承，也就是说，一个子类只能拥有一个父类。
+
+  下面的做法是不合法的：
+
+  ```java
+  public class xxx extends Animal, Mammal{}
+  ```
+
+  但是我们可以用多实现接口来实现,　如：
+
+  ```java
+  public class Apple extends Fruit implements Fruit1, Fruit2{}
+  ```
+
+- 子类可以继承父类所有的方法和属性，但是无法使用 private(私有) 的方法和属性，这保障了父类的封装性。
+
+- 子类不可以继承由final关键字修饰的父类
+
+##### 多态
+
+所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。
+
+这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。
+
+###### 多态举例
+
+```java
+Rectangle rectangle = new Square(1);
+	rectangle.test();
+```
+
+```java
+我是属于Square的方法
+```
+
