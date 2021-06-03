@@ -8,6 +8,8 @@
 
     - ##### [Java 基础语法](https://github.com/piinnes/JavaInterview/blob/master/docs/basics/Java基础语法.md)
 
+    - ##### [基本数据类型](https://github.com/piinnes/JavaInterview/blob/master/docs/basics/基本数据类型.md)
+
   - #### 计算机网络
 
   - #### 计算机操作系统与Linux知识点
