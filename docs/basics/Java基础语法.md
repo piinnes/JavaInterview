@@ -162,7 +162,7 @@ public enum Color {
 <tr>
 <td rowspan="12" align="center">程序控制语句</td>
 <td>break</td>
-<td>跳出循环</td>
+<td>指跳出整个循环体，继续执行循环下面的语句。</td>
 </tr>
 <tr>
 <td>case</td>
@@ -170,7 +170,7 @@ public enum Color {
 </tr>
 <tr>
 <td>continue</td>
-<td>继续</td>
+<td>指跳出当前的这一次循环，继续下一次循环。</td>
 </tr>
 <tr>
 <td>default</td>
@@ -198,7 +198,7 @@ public enum Color {
 </tr>
 <tr>
 <td>return</td>
-<td>返回</td>
+<td>用于跳出所在方法，结束该方法的运行。</td>
 </tr>
 <tr>
 <td>switch</td>
@@ -302,6 +302,7 @@ public enum Color {
 <td>空</td>
 </tr>
 </tbody></table>
+
 
 ## Java注释
 
