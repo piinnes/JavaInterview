@@ -16,9 +16,9 @@
 
     - ##### [什么是Java泛型？什么是类型擦除？常用的通配符？](https://github.com/piinnes/JavaInterview/blob/master/docs/basics/什么是Java泛型？什么是类型擦除？常用的通配符？.md)
 
-    - ##### [==和 equals 的区别](https://github.com/piinnes/JavaInterview/blob/master/docs/basics/==和 equals 的区别.md)
+    - ##### [==和 equals 的区别](https://github.com/piinnes/JavaInterview/blob/master/docs/basics/==和equals的区别.md)
 
-    - ##### [hashCode()与 equals()](https://github.com/piinnes/JavaInterview/blob/master/docs/basics/hashCode()与 equals().md)
+    - ##### [hashCode()与 equals()](https://github.com/piinnes/JavaInterview/blob/master/docs/basics/hashCode()与equals().md)
 
   - #### 计算机网络
 
